@@ -1,0 +1,50 @@
+GET http://localhost:8080/api/employees
+
+###
+
+POST http://localhost:8080/api/employees
+    Content-Type: application/json
+
+    {
+        "firstName": "Babucarr",
+        "lastName": "Drammeh",
+        "emailAddress": "drammehBabucarr@utg.com",
+        "position": "CEO"
+    }
+
+###
+POST http://localhost:8080/signup
+ Content-Type: application/json
+
+ {
+    "username": "admin2",
+    "password": "admin2",
+    "role": "ADMIN"
+ }
+
+
+###
+PUT http://localhost:8080/api/employees/3
+Content-Type: application/json
+
+{
+    "firstName": "Abdoulatief",
+    "middleName": "hackalton",
+    "lastName": "Tabally",
+    "emailAddress": "tabally@utg.com",
+    "position": "PROs"
+}
+
+###
+
+POST http://localhost:8080/login
+Content-Type: application/json
+
+{
+    "emailAddress": "admin1",
+    "password": "admin1"
+}
+
+
+ 
+ 

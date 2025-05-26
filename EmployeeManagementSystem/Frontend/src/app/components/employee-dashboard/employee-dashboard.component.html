@@ -1,0 +1,54 @@
+<div class="container mt-5" style="min-height: 90vh;">
+    <div class="card shadow-lg">
+        <div class="card-header text-center text-white" style="background-color: #1B1B1B;">
+            <h4>Employee Account</h4>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-6 text-center">
+                    <img src="/employee.png" alt="Profile Picture" class="rounded-circle img-fluid">
+                </div>
+                <div class="col-md-6 mt-5">
+                    <h5><strong>First Name:</strong> {{employee?.firstName}}</h5>
+                    <h5><strong>Middle Name:</strong> {{employee?.middleName}}</h5>
+                    <h5><strong>Last Name:</strong> {{employee?.lastName}}</h5>
+                    <p><strong>Email:</strong> {{employee?.emailAddress}}</p>
+                    <p><strong>Position:</strong> {{employee?.position}}</p>
+                </div>
+                <div class="attendance">
+                    <div>
+                        <h5 class="text-center">My Attendance</h5>
+                    </div>
+                    <div class="col-md-12 text-center mt-4 d-flex gap-2 justify-content-center">
+                        <button class="btn btn-primary px-3" (click)="clockIn(employee?.id)">Clock In</button>
+                        <button class="btn btn-secondary" (click)="clockOut()">Clock Out</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center my-3" style="font-size:large;">
+            <p class="fw-bold fs-5">
+                We deeply appreciate the dedication, hard work, and passion you have brought to this team.  
+                Your contributions have not only helped us grow but have also left a lasting impact on everyone you've worked with.  
+                It is never easy to say goodbye to a valued team member, and your presence will truly be missed.  
+            </p>
+            <p class="fs-6">
+                From the small moments of collaboration to the big achievements, your time here has been meaningful and inspiring.  
+                You have been more than just a colleague; you have been a part of our family, sharing in our successes and challenges alike.  
+            </p>
+            <p class="text-danger fw-bold">
+                If you ever decide to leave, you may resign by clicking the button below.  
+                However, your resignation would sadden the entire team and the company at large.  
+                We sincerely hope you continue to be a part of our journey, but no matter what you choose,  
+                we wish you success and fulfillment in all your future endeavors.  
+            </p>
+        </div>
+        
+        
+        <div class="card-footer text-center">
+            <button class="btn btn-danger w-100" (click)="resign()">Resign</button>
+        </div>
+    </div>
+</div>
+
+

@@ -4,18 +4,19 @@ import { AuthService } from '../../service/auth.service';
 import { jwtDecode } from 'jwt-decode';
 import { Router } from '@angular/router';
 import { AttendanceService } from '../../service/attendance.service';
-import { getLocaleDateFormat } from '@angular/common';
+import { CommonModule, getLocaleDateFormat } from '@angular/common';
 
 @Component({
   selector: 'app-employee-dashboard',
   standalone: true,
-  imports: [],
+  imports: [CommonModule,],
   templateUrl: './employee-dashboard.component.html',
   styleUrl: './employee-dashboard.component.css'
 })
 export class EmployeeDashboardComponent implements OnInit{
   employee: any;
   attendance: any = null;
+  showModal: boolean = false;
 
   constructor(private employeeService: EmployeeService, private authService: AuthService, private router: Router, private attendanceService: AttendanceService){}
 
@@ -37,6 +38,14 @@ export class EmployeeDashboardComponent implements OnInit{
         console.error('Error fetching employee by email:', error);
       }
     })
+  }
+
+  iniateResignation(): void{
+    this.showModal = true;
+  }
+
+  closeModal(): void{
+    this.showModal = false;
   }
 
   resign(): void{

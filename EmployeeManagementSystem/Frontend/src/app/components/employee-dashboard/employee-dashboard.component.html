@@ -8,6 +8,23 @@
                 <div class="col-md-6 text-center">
                     <img src="/employee.png" alt="Profile Picture" class="rounded-circle img-fluid">
                 </div>
+                <div [ngClass]="{'show': showModal}" [style.display]="showModal ? 'block' : 'none'" class="modal fade" id="employeeModal" tabindex="-1" aria-labelledby="employeeModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header" style="background-color: #000; color:#ffffff">
+                                <h3>Confirm Resignation</h3>
+                                <button type="button" class="btn-close" style="color: red; background-color: red;" data-bs-dismiss="modal" aria-label="Close" (click)="closeModal()"></button>
+                            </div>
+                            <div class="modal-body">
+                                <p>Are you sure you want to resign? <i>This action can't be undone!</i></p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="closeModal()">Cancel</button>
+                                <button type="button" class="btn btn-danger" (click)="resign()">Yes, Resign</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="col-md-6 mt-5">
                     <h5><strong>First Name:</strong> {{employee?.firstName}}</h5>
                     <h5><strong>Middle Name:</strong> {{employee?.middleName}}</h5>
@@ -46,7 +63,7 @@
         
         
         <div class="card-footer text-center">
-            <button class="btn btn-danger w-100" (click)="resign()">Resign</button>
+            <button class="btn btn-danger w-100" (click)="iniateResignation()">Resign</button>
         </div>
     </div>
 </div>
